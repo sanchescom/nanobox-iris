@@ -10,8 +10,8 @@ func main() {
 	app := iris.New()
 	
 	// load the ./templates/**.html
-	templates := view.HTML("./templates", ".html"))
-	app.AttachView(templates)
+	templates := view.HTML("./templates", ".html")
+	app.RegisterView(templates)
 	
 	app.Handle("GET", "/", func(ctx context.Context) {
 	        // bind the {{ .Name }}
